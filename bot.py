@@ -1,7 +1,11 @@
 import time
 import requests
+from dotenv import load_dotenv
+import os
 
 
+load_dotenv(override=True)
+API_KEY = os.getenv("API_KEY")
 
 # For getting latest updates
 # response = requests.get(base_url)
@@ -27,7 +31,7 @@ import requests
 #     time.sleep(3)
 
 # Sending photo and document
-base_url = 'https://api.telegram.org/bot5159934509:AAEkpZRHjowX-hF-l_OhZZKXrWJFbBP65nQ/sendDocument'
+base_url = f'https://api.telegram.org/bot{API_KEY}/sendDocument'
 parameters = {
     'chat_id': '368096415',
     'caption': 'Here is a document for you'
